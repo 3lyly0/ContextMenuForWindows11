@@ -11,15 +11,15 @@ jobs:
   build:
     strategy:
       matrix:
-        platform: [x64, ARM64]
-        package: [CMC_GITHUB_RELEASE, CMC_DEV_RELEASE, CMC_ANY]
+        platform: [x64]
+        package: [CMC_ANY]
 
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
       with:
-        ref: dev-2024
+        ref: main
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v2
